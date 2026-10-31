@@ -10,7 +10,7 @@ using namespace config;
 
 int main(){
     InitWindow(SCREEN_WIDTH , SCREEN_HEIGHT , "Game of life");
-    SetTargetFPS(12);
+    SetTargetFPS(60);
     // Grid grid = Grid(SCREEN_WIDTH , SCREEN_HEIGHT , cell_size);
     Simulation simulation(SCREEN_WIDTH , SCREEN_HEIGHT , cell_size);
 
