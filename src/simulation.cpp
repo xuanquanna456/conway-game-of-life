@@ -8,6 +8,10 @@ void Simulation::SetCellValue(int row , int col , int value){
     grid.SetValue(row , col , value);
 }
 
+int Simulation::GetCellValue(int row , int col){
+    return grid.GetValue(row , col);
+}
+
 int Simulation::countLiveNeighbours(int row , int col){
     return grid.CountLiveNeighbour(row , col);
 }

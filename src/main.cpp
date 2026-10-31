@@ -10,16 +10,15 @@ using namespace config;
 
 int main(){
     InitWindow(SCREEN_WIDTH , SCREEN_HEIGHT , "Game of life");
-    SetTargetFPS(60);
+    SetTargetFPS(12);
     // Grid grid = Grid(SCREEN_WIDTH , SCREEN_HEIGHT , cell_size);
     Simulation simulation(SCREEN_WIDTH , SCREEN_HEIGHT , cell_size);
-
-
+    
     while(!WindowShouldClose()){
         // 1. Event Handling
-        if (IsMouseButtonDown(MOUSE_BUTTON_LEFT)){
+        if (IsMouseButtonPressed(MOUSE_BUTTON_LEFT)){
             Vector2 position = GetMousePosition();
-            simulation.SetCellValue(position.y / cell_size , position.x / cell_size , 1);
+            simulation.SetCellValue(position.y / cell_size , position.x / cell_size , !simulation.GetCellValue(position.y/cell_size , position.x / cell_size));
         }
         if (IsKeyPressed(KEY_ENTER)){
             // Start simulation
